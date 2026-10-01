@@ -1,0 +1,6 @@
+{
+  "ca": { "state": "stated", "value": "0xAbCdEf0123456789aBcDeF0123456789AbCdEf01" },
+  "x": { "state": "stated", "value": "https://x.com/acme_fixture" },
+  "github": { "state": "stated", "value": "https://github.com/acme-fixture" },
+  "launcher": { "state": "stated", "value": "https://launch.example.test/app" }
+}

@@ -1,0 +1,29 @@
+/* Latin subsets only, self-hosted. Licences sit beside the files. */
+@font-face {
+  font-family: "Montserrat Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("./fonts/montserrat-latin-wght-normal.woff2") format("woff2-variations");
+}
+@font-face {
+  font-family: "Varela Round";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("./fonts/varela-round-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("./fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("./fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2");
+}

@@ -1,0 +1,77 @@
+/* THE ONLY FILE IN THE PROJECT THAT MAY HOLD A COLOUR LITERAL.
+ *
+ * Provenance: k-means (k=10, seed 4663, 60 iterations) over pixels of
+ *   reference/SAMPUL INITIATE JPG.jpg.jpeg (step 3), reference/INITIATE 1.jpg.jpeg (step 4),
+ *   brand/LOGO INITIATE PNG.png (step 8). Every centroid was then snapped to the nearest
+ *   REAL pixel, and the pixel was re-read from its file to confirm the value (scripts/assets.py).
+ *   Each line below carries: source file, pixel (x,y), cluster share where it came from k-means.
+ *   "direct" means read at a fixed coordinate, not via a cluster, because k-means smears
+ *   thin features (logo fill, wordmark strokes, headline glyphs).
+ * The two brand PNGs are RGBA colourtype 6; the transparent one stores its 3,551,604 empty
+ * pixels as RGB(0,0,0), so all mark/favicon resizes are premultiplied. The fill was sampled
+ * from the opaque twin for that reason.
+ */
+:root {
+  /* ground, darkest to lightest */
+  --ink-deep:     #030708; /* k-means 4.3%  · cover (9,0) */
+  --bg:           #08090b; /* k-means 34.7% · cover (1314,12) */
+  --bg-lift:      #090f0f; /* k-means 8.7%  · cover (270,0) */
+  --surface:      #0d1114; /* k-means 31.0% · slide 1 (1412,532) */
+  --ink:          #0e0f13; /* direct        · brand/LOGO INITIATE PNG.png (100,100) */
+  --surface-2:    #17221c; /* k-means 6.3%  · cover (555,0) */
+
+  /* rules and quiet text */
+  --line:         #2b3b30; /* k-means 2.6%  · cover (522,276) */
+  --line-strong:  #4b5b4e; /* k-means 1.4%  · cover (75,495) */
+  --sage-dim:     #7f8c78; /* k-means 1.8%  · slide 1 (1488,668) */
+
+  /* the sage family, from the mark outward */
+  --sage:         #a9b29f; /* k-means 5.1%  · slide 1 (1432,492) */
+  --mark:         #a7ae9c; /* direct        · brand/LOGO INITIATE PNG.png (700,1000): the logo fill */
+  --sage-bright:  #c6d5c0; /* direct        · slide 1 (222,302): headline glyph */
+  --text:         #d4dccf; /* k-means 4.2%  · cover (699,336) */
+  --white:        #ffffff; /* direct        · slide 1 (123,48): wordmark stroke */
+}
+
+:root {
+  color-scheme: dark;
+
+  /* roles: no literals below this line */
+  --c-page: var(--bg);
+  --c-page-alt: var(--bg-lift);
+  --c-panel: var(--surface);
+  --c-panel-hi: var(--surface-2);
+  --c-rule: var(--line);
+  --c-rule-hi: var(--line-strong);
+  --c-muted: var(--sage-dim);
+  --c-body: var(--text);
+  --c-accent: var(--sage-bright);
+  --c-accent-soft: var(--sage);
+  --c-mark: var(--mark);
+  --c-strong: var(--white);
+  --c-on-accent: var(--ink);
+  --c-shadow: var(--ink-deep);
+
+  /* type */
+  --f-display: "Montserrat Variable", "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --f-body: "Varela Round", ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+  /* motion (same curves the reference settled on; durations are ours) */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 140ms;
+  --t-mid: 240ms;
+  --t-slow: 700ms;
+
+  /* space and shape */
+  --gutter: 16px;
+  --tap: 48px;
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --wrap: 1200px;
+}
+@media (min-width: 720px) { :root { --gutter: 28px; } }
+@media (min-width: 1200px) { :root { --gutter: 40px; } }
